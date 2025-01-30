@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countik Widget</title>
+</head>
+<body>
+    <div id="countik-widget"></div>
+    <script>
+        (function() {
+            var countikWidget = document.createElement('script');
+            countikWidget.src = 'https://countik.com/widget.js';
+            countikWidget.async = true;
+            countikWidget.onload = function() {
+                if (typeof window.initializeCountikWidget === 'function') {
+                    window.initializeCountikWidget({
+                        container: '#countik-widget',
+                        themeColor: '#ff0000',
+                        uniqueId: 'broken8.24',
+                        language: 'en'
+                    });
+                }
+            };
+            var firstScript = document.getElementsByTagName('script')[0];
+            firstScript.parentNode.insertBefore(countikWidget, firstScript);
+        })();
+    </script>
+    <a href="https://countik.com/user/broken8.24" target="_blank" class="pow-countik" 
+    style="font-size:11px;color:#333;display:block;padding:4px 3px;text-decoration:none;">
+    Powered by Countik™</a>
+</body>
+</html>
